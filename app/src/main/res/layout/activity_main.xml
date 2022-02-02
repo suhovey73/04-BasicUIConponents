@@ -4,15 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvOnAccessBy_findViewById"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="findViewById"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/barrier1"
+        app:layout_constraintStart_toEndOf="@id/btnChangePropertyBy_findViewById"/>
+
+    <Button
+        android:id="@+id/btnChangePropertyBy_findViewById"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change text color\nby findViewById"
+        android:textAllCaps="false"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="btnChangePropertyBy_findViewById,tvOnAccessBy_findViewById"
+        app:barrierDirection="bottom"/>
+
+    <TextView
+        android:id="@+id/tvOnAccessBy_viewBinding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="viewBinding"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/barrier1"
+        app:layout_constraintBottom_toBottomOf="@id/barrier2"
+        app:layout_constraintStart_toEndOf="@id/btnChangePropertyBy_findViewById"/>
+
+    <Button
+        android:id="@+id/btnChangePropertyBy_viewBinding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change text color\nby viewBinding"
+        android:textAllCaps="false"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="btnChangePropertyBy_viewBinding,tvOnAccessBy_viewBinding"
+        app:barrierDirection="bottom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
